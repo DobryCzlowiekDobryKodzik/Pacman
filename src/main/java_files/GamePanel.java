@@ -54,10 +54,11 @@ import javax.swing.*;
     final static int TILE_SIZE = 40;
     final static int DOT_SIZE = TILE_SIZE / 5;
     final static int BIG_DOT_SIZE = TILE_SIZE / 2;
+    final static double SCALE = 0.75; // window/render scale: 1.0 = 800x840, 0.75 = 600x630
 
     GamePanel(){
         setBackground(Color.BLACK);
-        setPreferredSize( new Dimension( map[0].length * TILE_SIZE, map.length * TILE_SIZE ) );
+        setPreferredSize( new Dimension( (int)(map[0].length * TILE_SIZE * SCALE), (int)(map.length * TILE_SIZE * SCALE) ) );
         addKeyListener(this);
         running = true;
         setFocusable(true);
@@ -380,6 +381,8 @@ import javax.swing.*;
     @Override
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.scale(SCALE, SCALE);
 
         for(int i = 0; i < map.length; i++){
             for(int j = 0; j < map[0].length; j++){
