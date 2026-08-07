@@ -1,0 +1,33 @@
+# Compiled class files
+*.class
+
+# Build output
+bin/
+out/
+target/
+build/
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE - VS Code
+.vscode/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+
+# Logs
+*.log
+
+# Database artifacts
+*.sqlite
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
